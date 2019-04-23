@@ -51,14 +51,10 @@ export default class Count extends Component {
   };
 
   render() {
-    const style = {
-      fontSize: 16
-    };
     return (
-      <div style={style}>
+      <div>
         <button onClick={this.increment}>+32</button>
         <button onClick={this.decrement}>-32</button>
-
         <p>{this.state.count}</p>
         <div>{this.containerView()}</div>
       </div>
