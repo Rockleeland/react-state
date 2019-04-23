@@ -7,16 +7,14 @@ export default class Count extends Component {
   };
 
   increment = () => {
-    console.log("count");
     this.setState({
-      count: this.state.count + 1
+      count: this.state.count + 32
     });
   };
 
   decrement = () => {
-    console.log("count");
     this.setState({
-      count: this.state.count - 1
+      count: this.state.count - 32
     });
   };
 
@@ -30,7 +28,7 @@ export default class Count extends Component {
     let style = {
       backgroundColor: "blue"
     };
-    if (this.state.count === 3 && this.state.view) {
+    if (this.state.count <= 32 && this.state.view) {
       style = {
         backgroundColor: "#aad4e5"
       };
@@ -58,8 +56,8 @@ export default class Count extends Component {
     };
     return (
       <div style={style}>
-        <button onClick={this.increment}>+1</button>
-        <button onClick={this.decrement}>-1</button>
+        <button onClick={this.increment}>+32</button>
+        <button onClick={this.decrement}>-32</button>
 
         <p>{this.state.count}</p>
         <div>{this.containerView()}</div>
