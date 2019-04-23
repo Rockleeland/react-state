@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import WaterView from "./WaterView";
 
 export default class Count extends Component {
   state = {
@@ -33,19 +34,25 @@ export default class Count extends Component {
         backgroundColor: "#aad4e5"
       };
       return (
-        <div>
-          <button onClick={this.toggle}>Hide div!</button>
-          <div style={style}>Ice</div>
-        </div>
-      );
+      //passing props to functional component
+        <WaterView 
+            toggle={this.toggle} 
+            hideShow="Hide" 
+            style={style} 
+            waterForm='Ice'
+        />
+      )
     }
     if (this.state.view) {
+    //passing props to functional component
       return (
-        <div>
-          <button onClick={this.toggle}>Hide div!</button>
-          <div style={style}>Water</div>
-        </div>
-      );
+        <WaterView 
+            toggle={this.toggle} 
+            hideShow="Hide" 
+            style={style} 
+            waterForm='Water'
+        />
+      )
     }
     return <button onClick={this.toggle}>Show div!</button>;
   };
